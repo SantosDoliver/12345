@@ -1,0 +1,18 @@
+name: Meu primeiro CI
+on:
+  
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs_on: ubunto-latest
+    steps: 
+      - name: Build
+        run:
+          echo Iniciando Build...
+          echo Branch utilizada ${{ github.ref_name }}, Evento ${{ github.event_name }}.
